@@ -1,7 +1,7 @@
 export DRONE_RUSTFLAGS := '--cfg cortexm_core="cortexm4f_r0p1" --cfg stm32_mcu="stm32f303"'
 target := 'thumbv7em-none-eabihf'
 features := ''
-name := `basename $(pwd)`
+name := "f303-blinky" 
 release_bin := "target/" + target + "/release/" + name
 
 # Install dependencies
