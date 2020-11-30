@@ -1,12 +1,14 @@
 //! General-purpose I/O utility trait.
 
 use crate::drv::common::DrvRcc;
-use drone_core::{inventory, inventory::Inventory};
 use drone_cortexm::reg::prelude::*;
 use drone_stm32_map::periph::gpio::head::{GpioHeadMap, GpioHeadPeriph};
+use drone_core::{inventory, inventory::Inventory};
+use typenum::{U0, U1};
 
 /// GPIO port head driver.
-pub struct GpioHead<T: GpioHeadMap>(Inventory<GpioHeadEn<T>, 0>);
+//pub struct GpioHead<T: GpioHeadMap>(Inventory<GpioHeadEn<T>, 0>);
+pub struct GpioHead<T: GpioHeadMap>(Inventory<GpioHeadEn<T>, U0>);
 
 /// GPIO port head enabled driver.
 pub struct GpioHeadEn<T: GpioHeadMap> {
@@ -33,7 +35,7 @@ impl<T: GpioHeadMap> GpioHead<T> {
     }
 
     /// Enables the port clock.
-    pub fn into_enabled(self) -> Inventory<GpioHeadEn<T>, 1> {
+    pub fn into_enabled(self) -> Inventory<GpioHeadEn<T>, U1> {
         self.setup();
         let (enabled, token) = self.0.share1();
         // To be recreated in `from_enabled()`.
@@ -42,7 +44,7 @@ impl<T: GpioHeadMap> GpioHead<T> {
     }
 
     /// Disables the port clock.
-    pub fn from_enabled(enabled: Inventory<GpioHeadEn<T>, 1>) -> Self {
+    pub fn from_enabled(enabled: Inventory<GpioHeadEn<T>, U1>) -> Self {
         // Restoring the token dropped in `into_enabled()`.
         let token = unsafe { inventory::Token::new() };
         let mut enabled = enabled.merge1(token);

@@ -12,18 +12,18 @@ dependencies = [
 
 [[package]]
 name = "aho-corasick"
-version = "0.7.13"
+version = "0.7.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "043164d8ba5c4c3035fec9bbee8647c0261d788f3474306f93bb65901cae0e86"
+checksum = "7404febffaa47dac81aa44dba71523c9d069b1bdc50a77db41195149e17f68e5"
 dependencies = [
  "memchr",
 ]
 
 [[package]]
 name = "anyhow"
-version = "1.0.32"
+version = "1.0.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6b602bfe940d21c130f3895acd65221e8a61270debe89d628b9cb4e3ccb8569b"
+checksum = "bf8dcb5b4bbaa28653b647d8c77bd4ed40183b48882e130c1f1ffb73de069fd7"
 
 [[package]]
 name = "autocfg"
@@ -39,9 +39,9 @@ checksum = "4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822"
 
 [[package]]
 name = "drone-config"
-version = "0.12.4"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7b0ae7509cd042f6aea28bdaabec9c879101d0bc6a17045c94cb4532530913d2"
+checksum = "fd9d2cad84336c28a4039425f4da5db86c475f207e9f67c4b4e0ee49c42c96af"
 dependencies = [
  "anyhow",
  "serde",
@@ -50,20 +50,21 @@ dependencies = [
 
 [[package]]
 name = "drone-core"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c9733ab24ece5fbab850744603264cd199467f25fd9b436d158649283a5badd7"
+checksum = "4aaca1426b2b4e9488f15c0b143728059a55b408b49a40f4fc0b71559a8ecc5b"
 dependencies = [
  "drone-core-macros",
  "drone-ctypes",
  "futures",
+ "typenum",
 ]
 
 [[package]]
 name = "drone-core-macros"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0e1b8818c5aeea950771c01adc10d56687dbcbab0c58a0c60938ff8ff80a2b61"
+checksum = "be1dbe879080e182d1d145f0a44358942644c4dac5604e06f4960f3bce19d0d6"
 dependencies = [
  "Inflector",
  "drone-config",
@@ -76,9 +77,9 @@ dependencies = [
 
 [[package]]
 name = "drone-cortexm"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2c6ef9801e60d0445ebb6b62bcb4e59e7b34f0e816b4307e9494e69107065ddf"
+checksum = "409786174a7d04d2680b871c56751cc7755026a2c580cadce7ee6aaf61ea0bc4"
 dependencies = [
  "drone-core",
  "drone-cortexm-macros",
@@ -87,12 +88,11 @@ dependencies = [
 
 [[package]]
 name = "drone-cortexm-macros"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c36e1b2315eeca91190ab341bd8cc5d21dbd25a65e3651e960c20e72d5a15e37"
+checksum = "791e73685df495d18d6aa6a7267431ad58bb7f26621d387f39ed122697f29794"
 dependencies = [
  "Inflector",
- "drone-config",
  "drone-macros-core",
  "proc-macro2",
  "quote",
@@ -101,15 +101,15 @@ dependencies = [
 
 [[package]]
 name = "drone-ctypes"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "47a4068904c0ac39b62a01185c3cadf8e184f66edb0491d844868fa29e3fbfa5"
+checksum = "65a08f41c90670f31e906ff185f29cefef947163529c60e37139f7aecbf4cad7"
 
 [[package]]
 name = "drone-macros-core"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "904c4ce205bf151caabae41da364841594bbd08f851247975c2ce3bf87fac9f6"
+checksum = "cee3a3979d1b3727df681e4af175f54820c2c919e27c38b96fc6f9b9e545e2e3"
 dependencies = [
  "lazy_static",
  "proc-macro2",
@@ -120,9 +120,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5c0af112d3ca410f8d33a36eaff5cbb68472cb9481828557ee135727baa0ce4e"
+checksum = "538625f5faf601e1b465581da4a40493d2fd244865ddcfedeb0701fc31a32b27"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -139,9 +139,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-periph-dma"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2d24198702ce43bca5eab55274f4216027224ef48d917a8a155a8b39c2508f37"
+checksum = "7f952a5993427d0bbd84a2484940ed4aea66191e39c2f5da1b0fe939c2775311"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -150,9 +150,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-periph-exti"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "66fa64a2986337181c51aa2dbc1104c6cf36b4bf9d968807fce6b6100f695517"
+checksum = "6c46b746bf2a49f8b2fbcfbaa91b705e3ffef986da0ab8bd27bc5b417ddd6592"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -161,9 +161,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-periph-gpio"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c445558ad0a0385e47d7b021c47c91597c0a11a0bdef08c0c2cab867b06adc76"
+checksum = "abf41709d7bec6f5d29818a61cbff03d3f9474c2f35b2ab6125c8370a12d62e9"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -172,9 +172,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-periph-i2c"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "03daa55d2a06b412d76822ecfcfb0635e0ab86801d52f6bdf44360f3e65c42f5"
+checksum = "3c0c6b521add8c0f68bf3bc046d7645e536b1ebc02a685faed96cc8821186f4c"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -183,9 +183,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-periph-rtc"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d09e9863874df977ee25c8e30643d58368b71c9888bfcfc3cefc4a596582a537"
+checksum = "62d1625a892dcb48b0452c6565330062c683cfbf8e49123671307fc2f943cf17"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -194,9 +194,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-periph-spi"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9b0e8e6badb973849cc2272b595551e8afa7e180f89886efb02d8edabbb0aca6"
+checksum = "5d5dc147e6301450e51972506d6db3769e70c662eeaac6eadc35e247ceba684d"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -205,9 +205,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-periph-tim"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "67a51a564dba461e36e9e4852e65db3965c0e4ea0f295fd8d9eea2c6cf0f7ac0"
+checksum = "9a57022701fffa7a9e7de2d0f132d47a193df3af70496762fb83ffd678962b3e"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -216,9 +216,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-periph-uart"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f3eb222af1052bb77bd058995ffa877cfa1c0bbf88e2908a5c9ca11a87a101c8"
+checksum = "1c152dddcd92ab2cca2a3dff330dd88680b4f97b85f285505c1bacc43518cf73"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -227,9 +227,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ead49c5cc5263eeeec87afc2d10a1e0534b2f65e69e8d4b26c1a45a81e2d2a11"
+checksum = "af2a4eca283867e087779471636ba734b468675f56d5dbefd8a31193c9fd2f0b"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -250,9 +250,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-1"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c975f127dc85da44010e1759f9ffa1780756e7ca3d88f3ce538c62db34f11d67"
+checksum = "e948d7125c954cec60000d674a0fdc2a234c53461902516d05cb8d905c9adecb"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -261,9 +261,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-10"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ef61e53a66744e647d559d50b2f2927a08c9d855ebd98859f67fd4923edf3da0"
+checksum = "f707c7a6bfc0ebe6187de3c23c93c792956dc90044a915e1fc7a67268cc08a18"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -272,9 +272,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-11"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "01b4d15ac2f182a02ca6346ee6c8ef0bd46c76ba9f0f3a91f3a9b22bc885da8f"
+checksum = "883a85153527021005a4af7a634c0ea9ca5ac330dd30cfa328eae0de41d775c9"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -283,9 +283,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-12"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c17ee068cf52cd293ede95b57251e86f627ead40c276ddb86c4ce3699c2a06e1"
+checksum = "fa35dd41ab11ef97288a664f3934cc9e01028c5e082b207477bcf873ac604257"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -294,9 +294,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-2"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6b0d6c7825f681dda4c116e740a6845f2cdb3f927934ac017a44a3f7763d08c9"
+checksum = "3e503b7dca43d1941d7ef26c259eafaab2f5a2dc1cf132e44cc5253cb9214f90"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -305,9 +305,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-3"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7ae179f3d9476a0e251e0df25adffd7573783b9597a70a075dfbec076a7b23eb"
+checksum = "054a47440b0b55a08c82f6481fa7ce9067c9c5882d614eac647c1e75939dbadc"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -316,9 +316,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-4"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6b9c1379bf011217a3d6f7a71053ce8c897235de82ec91af1a37e5346b39fe1a"
+checksum = "ef16dfb3447dece73fab4dcc7a2d7c4d8b6d8dbc6f7ca202453d2055253ea30c"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -327,9 +327,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-5"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2308a5170a37660b36ab192d179bcd30f65ca5c31384e903152933408a56eaad"
+checksum = "a2d74d72c859d10aadea6dfb715712c5fa7766df48a1493f91c0c559e07ed7af"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -338,9 +338,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-6"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8a3648f7bb62d0e6eb8babee2325c023db936466458d3903d14a5bf2b9984da6"
+checksum = "70aeb82e57e6df6142e62b3ff16b3aa4a6ef00d986c9b1722af1226b424603fb"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -349,9 +349,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-7"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "03bfe8953ca8f176c0362ec9b91980e97caa013c178d94e6ad57a9e06700fd0b"
+checksum = "c54815029b33fd7bfa7ac9650bcd41d42989e033222f2bc3700f620b7caf1cc6"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -360,9 +360,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-8"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "37a3b4f59c663afc1cd5de4fc9536cb3cec076b2ee8e658a1d9a7ba3d816e4c6"
+checksum = "eb39271a914b929ae20fd430672c81e6f8ad118d4440e1c30db45a4bf736d89b"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -371,9 +371,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-pieces-9"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "58e16da3198d80317cba2b39c9ef6374283534508f3d62409f4c6973b077cf32"
+checksum = "dc71fbffbe9ba52ff9ff6d6569475649239e90363b200f08d3223560671667bf"
 dependencies = [
  "drone-core",
  "drone-cortexm",
@@ -382,9 +382,9 @@ dependencies = [
 
 [[package]]
 name = "drone-stm32-map-svd"
-version = "0.12.3"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "434816b9ff7986fd18cb7e6dec40a1b5cae0dcd1af7c8e44b1701c217ba5ebac"
+checksum = "3531e1fcf333245cc05a78aed47885fe13afcfa4da5035632d3b7eac2963bb4f"
 dependencies = [
  "anyhow",
  "drone-svd",
@@ -392,9 +392,9 @@ dependencies = [
 
 [[package]]
 name = "drone-svd"
-version = "0.12.0"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0f8bf7225cc98dc0c39e37a91ae9a7ffaf6111b04c0e05b6c8a3e54ae2f9f95c"
+checksum = "486cb2449c3a25d34933452f94041f39a6a5c94852922493c8ab2e753ccd3a8b"
 dependencies = [
  "anyhow",
  "indexmap",
@@ -410,13 +410,14 @@ dependencies = [
  "drone-cortexm",
  "drone-stm32-map",
  "futures",
+ "typenum",
 ]
 
 [[package]]
 name = "futures"
-version = "0.3.5"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1e05b85ec287aac0dc34db7d4a569323df697f9c55b99b15d6b4ef8cde49f613"
+checksum = "9b3b0c040a1fe6529d30b3c5944b280c7f0dcb2930d2c3062bca967b602583d0"
 dependencies = [
  "futures-channel",
  "futures-core",
@@ -428,9 +429,9 @@ dependencies = [
 
 [[package]]
 name = "futures-channel"
-version = "0.3.5"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f366ad74c28cca6ba456d95e6422883cfb4b252a83bed929c83abfdbbf2967d5"
+checksum = "4b7109687aa4e177ef6fe84553af6280ef2778bdb7783ba44c9dc3399110fe64"
 dependencies = [
  "futures-core",
  "futures-sink",
@@ -438,21 +439,21 @@ dependencies = [
 
 [[package]]
 name = "futures-core"
-version = "0.3.5"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "59f5fff90fd5d971f936ad674802482ba441b6f09ba5e15fd8b39145582ca399"
+checksum = "847ce131b72ffb13b6109a221da9ad97a64cbe48feb1028356b836b47b8f1748"
 
 [[package]]
 name = "futures-io"
-version = "0.3.5"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "de27142b013a8e869c14957e6d2edeef89e97c289e69d042ee3a49acd8b51789"
+checksum = "611834ce18aaa1bd13c4b374f5d653e1027cf99b6b502584ff8c9a64413b30bb"
 
 [[package]]
 name = "futures-macro"
-version = "0.3.5"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d0b5a30a4328ab5473878237c447333c093297bded83a4983d10f4deea240d39"
+checksum = "77408a692f1f97bcc61dc001d752e00643408fbc922e4d634c655df50d595556"
 dependencies = [
  "proc-macro-hack",
  "proc-macro2",
@@ -462,24 +463,24 @@ dependencies = [
 
 [[package]]
 name = "futures-sink"
-version = "0.3.5"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3f2032893cb734c7a05d85ce0cc8b8c4075278e93b24b66f9de99d6eb0fa8acc"
+checksum = "f878195a49cee50e006b02b93cf7e0a95a38ac7b776b4c4d9cc1207cd20fcb3d"
 
 [[package]]
 name = "futures-task"
-version = "0.3.5"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bdb66b5f09e22019b1ab0830f7785bcea8e7a42148683f99214f73f8ec21a626"
+checksum = "7c554eb5bf48b2426c4771ab68c6b14468b6e76cc90996f528c3338d761a4d0d"
 dependencies = [
  "once_cell",
 ]
 
 [[package]]
 name = "futures-util"
-version = "0.3.5"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8764574ff08b701a084482c3c7031349104b07ac897393010494beaa18ce32c6"
+checksum = "d304cff4a7b99cfb7986f7d43fbe93d175e72e704a8860787cc95e9ffd85cbd2"
 dependencies = [
  "futures-channel",
  "futures-core",
@@ -497,15 +498,15 @@ dependencies = [
 
 [[package]]
 name = "hashbrown"
-version = "0.9.0"
+version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "00d63df3d41950fb462ed38308eea019113ad1508da725bbedcd0fa5a85ef5f7"
+checksum = "d7afe4a420e3fe79967a00898cc1f4db7c8a49a9333a29f8a4bd76a253d5cd04"
 
 [[package]]
 name = "if_chain"
-version = "1.0.0"
+version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c3360c7b59e5ffa2653671fb74b4741a5d343c03f331c0a4aeda42b5c2b0ec7d"
+checksum = "1f7280c75fb2e2fc47080ec80ccc481376923acb04501957fc38f935c3de5088"
 
 [[package]]
 name = "indexmap"
@@ -534,30 +535,30 @@ dependencies = [
 
 [[package]]
 name = "memchr"
-version = "2.3.3"
+version = "2.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3728d817d99e5ac407411fa471ff9800a778d88a24685968b36824eaf4bee400"
+checksum = "0ee1c47aaa256ecabcaea351eae4a9b01ef39ed810004e298d2511ed284b1525"
 
 [[package]]
 name = "once_cell"
-version = "1.4.1"
+version = "1.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "260e51e7efe62b592207e9e13a68e43692a7a279171d6ba57abd208bf23645ad"
+checksum = "13bd41f508810a131401606d54ac32a467c97172d74ba7662562ebba5ad07fa0"
 
 [[package]]
 name = "pin-project"
-version = "0.4.23"
+version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ca4433fff2ae79342e497d9f8ee990d174071408f28f726d6d83af93e58e48aa"
+checksum = "9ccc2237c2c489783abd8c4c80e5450fc0e98644555b1364da68cc29aa151ca7"
 dependencies = [
  "pin-project-internal",
 ]
 
 [[package]]
 name = "pin-project-internal"
-version = "0.4.23"
+version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2c0e815c3ee9a031fdf5af21c10aa17c573c9c6a566328d99e3936c34e36461f"
+checksum = "f8e8d2bf0b23038a4424865103a4df472855692821aab4e4f5c3312d461d9e5f"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -572,9 +573,9 @@ checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 
 [[package]]
 name = "proc-macro-hack"
-version = "0.5.18"
+version = "0.5.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "99c605b9a0adc77b7211c6b1f722dcb613d68d66859a44f3d485a6da332b0598"
+checksum = "dbf0c48bc1d91375ae5c3cd81e3722dff1abcf81a30960240640d223f59fe0e5"
 
 [[package]]
 name = "proc-macro-nested"
@@ -584,9 +585,9 @@ checksum = "eba180dafb9038b050a4c280019bbedf9f2467b61e5d892dcad585bb57aadc5a"
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.20"
+version = "1.0.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "175c513d55719db99da20232b06cda8bab6b83ec2d04e3283edf0213c37c1a29"
+checksum = "1e0704ee1a7e00d7bb417d0770ea303c1bccbabf0ef1667dae92b5967f5f8a71"
 dependencies = [
  "unicode-xid",
 ]
@@ -602,9 +603,9 @@ dependencies = [
 
 [[package]]
 name = "regex"
-version = "1.3.9"
+version = "1.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9c3780fcf44b193bc4d09f36d2a3c87b251da4a046c87795a0d35f4f927ad8e6"
+checksum = "38cf2c13ed4745de91a5eb834e11c00bcc3709e773173b2ce4c56c9fbde04b9c"
 dependencies = [
  "aho-corasick",
  "memchr",
@@ -614,15 +615,15 @@ dependencies = [
 
 [[package]]
 name = "regex-syntax"
-version = "0.6.18"
+version = "0.6.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "26412eb97c6b088a6997e05f69403a802a92d520de2f8e63c2b65f9e0f47c4e8"
+checksum = "3b181ba2dcf07aaccad5448e8ead58db5b742cf85dfe035e2227f137a539a189"
 
 [[package]]
 name = "serde"
-version = "1.0.115"
+version = "1.0.117"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e54c9a88f2da7238af84b5101443f0c0d0a3bbdc455e34a5c9497b1903ed55d5"
+checksum = "b88fa983de7720629c9387e9f517353ed404164b1e482c970a90c1a4aaf7dc1a"
 dependencies = [
  "serde_derive",
 ]
@@ -641,9 +642,9 @@ dependencies = [
 
 [[package]]
 name = "serde_derive"
-version = "1.0.115"
+version = "1.0.117"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "609feed1d0a73cc36a0182a840a9b37b4a82f0b1150369f0536a9e3f2a31dc48"
+checksum = "cbd1ae72adb44aab48f325a02444a5fc079349a8d804c1fc922aed3f7454c74e"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -658,9 +659,9 @@ checksum = "c111b5bd5695e56cffe5129854aa230b39c93a305372fdbb2668ca2394eea9f8"
 
 [[package]]
 name = "syn"
-version = "1.0.40"
+version = "1.0.53"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "963f7d3cc59b59b9325165add223142bbf1df27655d07789f109896d353d8350"
+checksum = "8833e20724c24de12bbaba5ad230ea61c3eafb05b881c7c9d3cfe8638b187e68"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -669,18 +670,18 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "1.0.20"
+version = "1.0.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7dfdd070ccd8ccb78f4ad66bf1982dc37f620ef696c6b5028fe2ed83dd3d0d08"
+checksum = "0e9ae34b84616eedaaf1e9dd6026dbe00dcafa92aa0c8077cb69df1fcfe5e53e"
 dependencies = [
  "thiserror-impl",
 ]
 
 [[package]]
 name = "thiserror-impl"
-version = "1.0.20"
+version = "1.0.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bd80fc12f73063ac132ac92aceea36734f04a1d93c1240c6944e23a3b8841793"
+checksum = "9ba20f23e85b10754cd195504aebf6a27e2e6cbe28c17778a0c930724628dd56"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -698,12 +699,18 @@ dependencies = [
 
 [[package]]
 name = "toml"
-version = "0.5.6"
+version = "0.5.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ffc92d160b1eef40665be3a05630d003936a3bc7da7421277846c2613e92c71a"
+checksum = "75cf45bb0bef80604d001caaec0d09da99611b3c0fd39d3080468875cdb65645"
 dependencies = [
  "serde",
 ]
+
+[[package]]
+name = "typenum"
+version = "1.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "373c8a200f9e67a0c95e62a4f52fbf80c23b4381c05a17845531982fa99e6b33"
 
 [[package]]
 name = "unicode-xid"

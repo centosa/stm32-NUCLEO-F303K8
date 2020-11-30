@@ -16,6 +16,9 @@ pools = [
     { block = "1764", capacity = 1},
 ]
 
+[linker]
+platform = "arm"
+
 [probe]
 gdb-client-command = "gdb-multiarch"
 

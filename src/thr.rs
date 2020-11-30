@@ -5,42 +5,34 @@ pub use drone_stm32_map::thr::*;
 
 use drone_cortexm::thr;
 
-thr::vtable! {
-    use Thr;
-
-    /// The vector table type.
-    pub struct Vtable;
-
-    /// Explicit vector table handlers.
-    pub struct Handlers;
-
-    /// A set of thread tokens.
-    pub struct Thrs;
-
-    /// Threads initialization token.
-    pub struct ThrsInit;
-
-    /// The array of thread data.
-    static THREADS;
-
-    // --- Allocated threads ---
-
-    /// All classes of faults.
-    pub HARD_FAULT;
-    /// System tick timer.
-    pub SYS_TICK;
-    /// RCC global interrupt.
-    pub 5: RCC;
-    /// EXTI Line 5(to9) interrupt.
-    pub 23: EXTI9_5;
-}
-
 thr! {
-    use THREADS;
-
     /// The thread data.
-    pub struct Thr {}
+    thread => pub Thr {};
 
     /// The thread-local storage.
-    pub struct ThrLocal {}
+    local => pub ThrLocal {};
+
+    /// The vector table type.
+    vtable => pub Vtable;
+
+    /// A set of thread tokens.
+    index => pub Thrs;
+
+    /// Threads initialization token.
+    init => pub ThrsInit;
+
+    threads => {
+        exceptions => {
+            /// All classes of faults.
+            pub hard_fault;
+            /// System tick timer.
+            pub sys_tick;
+        };
+        interrupts => {
+            /// RCC global interrupt.
+            5: pub rcc;
+            /// EXTI Line 5(to9) interrupt.
+            23: pub exti9_5;
+        };
+    };
 }

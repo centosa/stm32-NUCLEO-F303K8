@@ -6,13 +6,13 @@ use drone_core::{mem, token::Token};
 use drone_cortexm::processor;
 use f303_blinky::{
     tasks,
-    thr::{Handlers, ThrsInit, Vtable},
+    thr::{ThrsInit, Vtable},
     Regs,
 };
 
 /// The vector table.
 #[no_mangle]
-pub static VTABLE: Vtable = Vtable::new(Handlers { reset });
+pub static VTABLE: Vtable = Vtable::new(reset);
 
 /// The entry point.
 ///

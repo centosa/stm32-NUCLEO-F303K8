@@ -1,8 +1,9 @@
 #![feature(llvm_asm)]
 #![feature(allocator_api)]
-#![feature(const_fn)]
+#![feature(const_fn_fn_ptr_basics)]
 #![feature(prelude_import)]
 #![feature(proc_macro_hygiene)]
+#![feature(slice_ptr_get)]
 #![cfg_attr(not(feature = "std"), no_std)]
 
 extern crate alloc;
@@ -29,19 +30,22 @@ drone_cortexm::swo::set_log!();
 
 stm32_reg_tokens! {
     /// A set of tokens for all memory-mapped registers.
-    pub struct Regs;
+    index => pub Regs;
 
-    !dwt_cyccnt;
-    !itm_tpr; !itm_tcr; !itm_lar;
-    !tpiu_acpr; !tpiu_sppr; !tpiu_ffcr;
+    exclude => {
+        dwt_cyccnt,
+        itm_tpr, itm_tcr, itm_lar,
+        tpiu_acpr, tpiu_sppr, tpiu_ffcr,
 
-    !scb_ccr;
-    !mpu_type; !mpu_ctrl; !mpu_rnr; !mpu_rbar; !mpu_rasr;
+        scb_ccr,
+        mpu_type, mpu_ctrl, mpu_rnr, mpu_rbar, mpu_rasr,
+    }
+
 }
 
 heap! {
     /// A heap allocator generated from the `Drone.toml`.
-    pub struct Heap;
+    heap => pub Heap;
 }
 
 /// The global allocator.
